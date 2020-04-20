@@ -11,23 +11,26 @@ class Product:
 
     @price.setter
     def price(self, price):
-        if price in range(0, 9999999999999999999999):
+        if price >= 0:
             self.__price = price
         else:
-            price('Недопустимое значение')
+            print('Недопустимое значение')
 
     @property
     def stock(self):
         return self.__stock
-    
-    # def display_info(self):
-    #     print(self.__str__())
+
+    @stock.setter
+    def stock(self, stock):
+        if stock >= 0:
+            self.__stock = stock
+        else:
+            print('Недоступное значение')
 
     def __str__(self):
         return 'Номер товара:{} \tНазвание:{} \tЦена:{} \tКоличество:{}'.format(self.__id, self.__name, self.__price, self.__stock)
     
 t = Product(1, 'Лейс', 100, 500)
-t.price = -1000
 print(t)
 
 
