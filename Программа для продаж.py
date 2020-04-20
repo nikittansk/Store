@@ -1,5 +1,5 @@
 class Product:
-    def __init__(self, id, name, price, stock):
+    def __init__(self, id: int, name: str, price: int, stock: int):
         self.__id = id
         self.__name = name
         self.__price = price
@@ -11,7 +11,7 @@ class Product:
 
     @price.setter
     def price(self, price):
-        if price >= 0:
+        if price > 0:
             self.__price = price
         else:
             print('Недопустимое значение')
@@ -32,6 +32,18 @@ class Product:
     
 t = Product(1, 'Лейс', 100, 500)
 print(t)
+
+class Cart:
+    product = []
+
+    def add(self, product):
+        return product.append
+
+
+
+
+
+
 
 
 
