@@ -37,9 +37,7 @@ class Cart:
     product = []
 
     def add(self, product):
-        return product.append
-
-
+        return self.product.append()
 
 
 
