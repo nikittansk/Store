@@ -31,13 +31,22 @@ class Product:
         return 'Номер товара:{} \tНазвание:{} \tЦена:{} \tКоличество:{}'.format(self.__id, self.__name, self.__price, self.__stock)
     
 t = Product(1, 'Лейс', 100, 500)
-print(t)
+t2 = Product(2, 'Твикс', 35, 10)
+t3 = Product(3, 'Сникерс', 42, 53)
+products = [t, t2, t3]
+
+for p in products:
+    print(p)
 
 class Cart:
-    product = []
+    products = []
 
-    def add(self, product):
-        return self.product.append()
+    def add(self, id: int, name: str, price: int, stock: int):
+        return products.append()
+
+
+
+
 
 
 
