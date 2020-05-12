@@ -72,13 +72,16 @@ class Cart:
     def geTotalPrice(self):
         total = 0
         for cartItem in self.cartItems:
-            total = (total + cartItem.product.price) * cartItem.qty
+            if cartItem.product.stock >= cartItem.qty:
+                total = (total + cartItem.product.price) * cartItem.qty
+            else:
+                print('Такого кол-ва товара на складе нету')
         return total
 
     
-t = Product(1, 'Лейс', 100, 500)
+t = Product(1, 'Лейс', 100, 1)
 t2 = Product(2, 'Твикс', 35, 10)
-t3 = Product(3, 'Сникерс', 42, 53)
+t3 = Product(3, 'Сникерс', 42, 10)
 
 c = Cart()
 
@@ -89,24 +92,11 @@ c.addProduct(t3)
 c.remove(2)
 
 c.changeQty(1, 5)
+c.changeQty(3, 10)
 
 total = c.geTotalPrice()
 
 print()
-
-#products = [t, t2, t3]
-
-
-
-# for p in products:
-#     print(p)
-
-# class Cart:
-#     products = []
-
-#     def add(self, id: int, name: str, price: int, stock: int):
-
-#         return products.append()
 
 
 
