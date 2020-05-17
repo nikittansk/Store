@@ -70,15 +70,19 @@ class Cart:
 
     def changeQty(self, productId, newQty):
         foundCartItem = next((i for i in self.cartItems if i.product.id == productId), None)
-        foundCartItem.qty = newQty
+        for p in foundCartItem:
+            if p.product.stock >= p.qty:
+                p.qty = newQty
+            else:
+                print('Такого кол-ва нету')
     
     def geTotalPrice(self):
         total = 0
         for cartItem in self.cartItems:
-            if cartItem.product.stock >= cartItem.qty:
-                total = (total + cartItem.product.price) * cartItem.qty
-            else:
-                print('Такого кол-ва товара на складе нету')
+            # if cartItem.product.stock >= cartItem.qty:
+            total = (total + cartItem.product.price) * cartItem.qty
+            # else:
+            #     print('Такого кол-ва товара на складе нету')
         return total
 
     def getReportData(self):
@@ -131,7 +135,7 @@ with open('result.csv', 'w', newline='') as csvfile:
         spamwriter.writerow(d)
 
 
-
+print(cart.geTotalPrice())
 
 # 1 - сделать так, чтобы функция addProduct в классе Cart могла принимать не только продукт, но и его количество сразу
 # 2 - добавить проверки на количество, а где не надо - убрать
