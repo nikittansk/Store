@@ -42,10 +42,11 @@ class Cart:
                 print('Такого кол-ва на складе нету')
 
     
-    def geTotalPrice(self):
+    def getTotalPrice(self):
         total = 0
         for cartItem in self.cartItems:
-            total = (total + cartItem.product.price) * cartItem.qty
+            sum = cartItem.product.price * cartItem.qty
+            total = total + sum
         return total
 
     def getReportData(self):
