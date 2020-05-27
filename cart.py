@@ -25,8 +25,8 @@ class CartItem:
 class Cart:
     cartItems: List[int] = []
 
-    def addProduct(self, product):
-        newItem = CartItem(product, 1)
+    def addProduct(self, product, qty):
+        newItem = CartItem(product, qty)
         self.cartItems.append(newItem)
 
     def remove(self, productId):
@@ -35,10 +35,11 @@ class Cart:
 
     def changeQty(self, productId, newQty):
         foundCartItem = next((i for i in self.cartItems if i.product.id == productId), None)
-        if foundCartItem.qty >= foundCartItem.product.stock:
-            foundCartItem.qty = newQty
-        else:
-            print('Такого кол-ва на складе нету')
+        for i in self.cartItems:
+            if foundCartItem.qty <= i.product.stock:
+                foundCartItem.qty = newQty
+            else:
+                print('Такого кол-ва на складе нету')
 
     
     def geTotalPrice(self):
