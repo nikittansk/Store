@@ -45,8 +45,9 @@ class Cart:
     def getTotalPrice(self):
         total = 0
         for cartItem in self.cartItems:
-            sum = cartItem.product.price * cartItem.qty
-            total = total + sum
+            if cartItem.product.stock >= cartItem.qty:
+                sum = cartItem.product.price * cartItem.qty
+                total = total + sum
         return total
 
     def getReportData(self):
