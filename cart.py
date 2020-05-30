@@ -25,7 +25,7 @@ class CartItem:
 class Cart:
     cartItems: List[int] = []
 
-    def addProduct(self, product, qty):
+    def addProduct(self, product, qty = 1):
         newItem = CartItem(product, qty)
         self.cartItems.append(newItem)
 
@@ -36,7 +36,7 @@ class Cart:
     def changeQty(self, productId, newQty):
         foundCartItem = next((i for i in self.cartItems if i.product.id == productId), None)
         for i in self.cartItems:
-            if foundCartItem.qty <= i.product.stock:
+            if newQty <= i.product.stock:
                 foundCartItem.qty = newQty
             else:
                 print('Такого кол-ва на складе нету')
