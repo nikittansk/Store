@@ -41,8 +41,7 @@ while True:
 
     foundProduct = next((i for i in products if i.id == productId), None)
 
-    cart.addProduct(foundProduct)
-    cart.changeQty(productId, productQty)
+    cart.addProduct(foundProduct, productQty)
 
 
 with open('result.csv', 'w', newline='') as csvfile:
