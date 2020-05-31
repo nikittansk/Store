@@ -3,7 +3,7 @@ import csv
 
 from product import Product
 from cart import Cart
-from cart import CartItem
+from cartitem import CartItem
 
 
 
@@ -29,6 +29,7 @@ for p in products:
     print(p)
 
 cart = Cart()
+
 
 # Выбор товаров для добавления в корзину
 while True: 
@@ -61,3 +62,14 @@ print('К оплате:', cart.getTotalPrice(), 'руб.')
 # 3 - проставить типы, где нужно, разобраться как дать тип списку объектоав (cartItems)    Сделано
 # 4 - вделить логику (классы Product, CartItem, Cart) в отдельнвый модуль (файл).          СДЕЛАНО
 # 5 - Если убрать с функции getTotalPrice условия, то будет происходить подсчет товара если он превышает кол-во имеющегося.  
+
+
+#30 05
+# 1 - Инкапсюлация для CartItems в class Cart - сделана
+# 2 - Вынести отдельно модуль CartItem - сделано
+# 3 - Добавить проверку в addProduct - сделано 
+
+
+#Вопросы
+# 1 - Праверить правильно ли я прописал взаимодецствие модулей и как не запутать при прописании к какому файлу какой import писать
+# 2 - Почему если не прописывать условия в функции addProduct, то changeQty не работает? (Это потому что у нас прописано cart.addProduct? Если бы было прописано cart.changeQty тогда было бы все ок?) 
