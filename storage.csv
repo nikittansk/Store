@@ -1,11 +1,11 @@
 ID;Stock;Name;Price;Period
-1;500;Lays;100;Март
-2;10;Twix;35;Январь
-3;53;Snickers;42;
-4;1399;Coca Cola;80;Июнь
+1;500;Lays;100;03
+2;10;Twix;35;01
+3;20;Snickers;42;
+4;1399;Coca Cola;80;05
 5;999;Fanta;75;
-6;1200;Sprite;78;Сентябрь
-7;2000;Mamba;29;Март
+6;1200;Sprite;78;11
+7;2000;Mamba;29;06
 8;233;Dirol;35;
-9;500;Pepsi;55;Февраль
+9;0;Pepsi;55;09
 10;845;Russian potato;49;

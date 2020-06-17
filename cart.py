@@ -3,7 +3,7 @@ from typing import List    #  from typing import List, Set, Tuple, Dict
 
 
 class Cart:
-    __cartItems: List[int] = []
+    __cartItems: List[CartItem] = []
 
     def addProduct(self, product, qty = 1):
         newItem = CartItem(product, qty)
