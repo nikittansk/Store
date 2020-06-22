@@ -42,7 +42,7 @@ class StorageItem(Product):
 
 #     def addProduct(self, ProductID, SoldQuanity):
 #         newItem = FoundStorageItem(ProductID, SoldQuanity)
-#         if newItem.SoldQuanity <= newItem.ProductID.stock: # Или должно быть if newItem.SoldQuanity тогда append
+#         if newItem.SoldQuanity <= newItem.ProductID.stock: # Или должно быть if newItem.SoldQuanity > 0 тогда append
 #             self.__FoundStorageItem.append(newItem)
 
 # t = StorageItem(1, "Ментос", 1000, 10, 11)
