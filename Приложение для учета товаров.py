@@ -16,6 +16,42 @@ class StorageItem(Product):
     def __str__(self):
         return 'Номер товара:{:<2} Название:{:<15} Цена:{:<4} Доступное количество:{:<4} Период:{:<7}'.format(self.id, self.name, self.price, self.stock, self.__period)
 
+# class FoundStorageItem:
+#     def __init__(self, ProductID, SoldQuanity):
+#         self.__ProductID = ProductID
+#         self.__SoldQuanity = SoldQuanity
+
+#     @property
+#     def ProductID(self):
+#         return self.__ProductID
+   
+#     @property
+#     def SoldQuanity(self):
+#         return self.__SoldQuanity
+
+#     @SoldQuanity.setter
+#     def SoldQuanity(self, SoldQuanity):
+#         if SoldQuanity > 0:
+#             self.__SoldQuanity = SoldQuanity
+#         else:
+#             print('Недопустимое значение')
+
+
+# class Storage:
+#     __FoundStorageItem: List[FoundStorageItem] = []
+
+#     def addProduct(self, ProductID, SoldQuanity):
+#         newItem = FoundStorageItem(ProductID, SoldQuanity)
+#         if newItem.SoldQuanity <= newItem.ProductID.stock: # Или должно быть if newItem.SoldQuanity тогда append
+#             self.__FoundStorageItem.append(newItem)
+
+# t = StorageItem(1, "Ментос", 1000, 10, 11)
+
+# s = Storage()
+
+# s.addProduct(t)
+
+# print()
 # Чтение файла склада
 storages: List[StorageItem] = []
 
