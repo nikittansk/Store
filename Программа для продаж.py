@@ -38,9 +38,11 @@ while True:
         break 
     
     productId = int(firstInput)
-    productQty = int(input("Введите количество: ")) 
+
+    productQty = int(input("Введите количество: "))
 
     foundProduct = next((i for i in products if i.id == productId), None)
+
 
     cart.addProduct(foundProduct, productQty)
 

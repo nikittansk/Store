@@ -5,12 +5,12 @@ from typing import List    #  from typing import List, Set, Tuple, Dict
 class Cart:
     __cartItems: List[CartItem] = []
 
-    def addProduct(self, product, qty = 1):
-        newItem = CartItem(product, qty)
-        if newItem.qty <= newItem.product.stock:
+    def addProduct(self, product, qty = 1):#productId
+        newItem = CartItem(product, qty) #productId
+        if newItem.qty <= newItem.product.stock: #or (newItem.productId == newItem.product.id)
             self.__cartItems.append(newItem)
         else:
-            print('Такого кол-ва на складе нету')   
+            print('Такого кол-ва на складе нету')
 
     def remove(self, productId):
         foundCartItem = next((i for i in self.__cartItems if i.product.id == productId), None)
