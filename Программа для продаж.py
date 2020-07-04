@@ -3,7 +3,7 @@ import csv
 
 from product import Product
 from cart import Cart
-from cartitem import CartItem
+#from cartitem import CartItem
 
 
 
