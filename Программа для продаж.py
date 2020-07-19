@@ -7,7 +7,7 @@ from cart import Cart
 
 
 
-
+data = []
 
 try:
     with open('products.json', 'r', encoding='utf-8') as fh: #открываем файл на чтение
