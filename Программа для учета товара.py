@@ -2,7 +2,7 @@ from storage import Storage
 
 storage = Storage()
 storage.fileReaderCsvStorage()
-storage.fileWriterJson()
+storage.writeJsonFile()
 #storage.changeQty(3, 10, 53)
 print()
 
