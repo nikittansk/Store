@@ -3,11 +3,11 @@ from typing import List    #  from typing import List, Set, Tuple, Dict
 
 
 class Cart:
-    __cartItems: List[int] = []
+    __cartItems: List[CartItem] = []
 
     def addProduct(self, product, qty = 1):
         newItem = CartItem(product, qty)
-        if newItem.qty <= newItem.product.stock:
+        if newItem.qty <= newItem.product.stock and newItem.qty > 0:
             self.__cartItems.append(newItem)
         else:
             print('Такого кол-ва на складе нету')   

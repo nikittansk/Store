@@ -3,11 +3,11 @@ import csv
 
 from product import Product
 from cart import Cart
-from cartitem import CartItem
+#from cartitem import CartItem
 
 
 
-
+data = []
 
 try:
     with open('products.json', 'r', encoding='utf-8') as fh: #открываем файл на чтение
@@ -36,11 +36,16 @@ while True:
     firstInput = input("Введите номер товара: ") 
     if(firstInput == "Все" or firstInput == "все"): 
         break 
-    
-    productId = int(firstInput)
-    productQty = int(input("Введите количество: ")) 
 
+    productId = int(firstInput)
+    
     foundProduct = next((i for i in products if i.id == productId), None)
+
+    if foundProduct == None:
+        print("Продукта с таким ID не существует")
+        continue
+   
+    productQty = int(input("Введите количество: ")) 
 
     cart.addProduct(foundProduct, productQty)
 
